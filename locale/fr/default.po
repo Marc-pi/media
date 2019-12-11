@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Pi-media\n"
-"POT-Creation-Date: 2019-04-23 18:53+0200\n"
-"PO-Revision-Date: 2019-04-23 18:53+0200\n"
+"POT-Creation-Date: 2019-12-11 10:37+0100\n"
+"PO-Revision-Date: 2019-12-11 10:38+0100\n"
 "Last-Translator: Taiwen Jiang <taiwenjiang@tsinghua.org.cn>\n"
 "Language-Team: \n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.2.4\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: ../..\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -38,21 +38,22 @@ msgstr "Les médias désactivés ont été supprimés définitivement"
 msgid "There is no soft-deleted media currently"
 msgstr "Il n'y a aucun media désactivé actuellement"
 
-#: src/Controller/Front/ListController.php:94
-msgid "List of your media"
-msgstr "Tous vos médias"
-
-#: src/Controller/Front/ListController.php:210
+#: src/Controller/Front/ListController.php:208
 msgid "All resources"
 msgstr "Toutes les ressources"
 
-#: src/Controller/Front/ListController.php:217
+#: src/Controller/Front/ListController.php:215
 msgid "Deleted resources"
 msgstr "Ressource supprimées"
 
-#: src/Controller/Front/ListController.php:225
+#: src/Controller/Front/ListController.php:223
 msgid "Orphan resources"
 msgstr "Ressources orphélines"
+
+#: src/Controller/Front/ListController.php:234
+#: template/front/list-index.phtml:6
+msgid "My Medias"
+msgstr "Mes Médias"
 
 #: src/Controller/Front/ListController.php:236
 msgid "Resource List"
@@ -94,7 +95,7 @@ msgstr ""
 "Ce media ne peut être supprimé, il est déjà utilisé soit par l'élément "
 "courant, soit par un autre élément."
 
-#: src/Controller/Front/ModalController.php:567
+#: src/Controller/Front/ModalController.php:570
 msgid "Media uploaded successfully"
 msgstr "Média uploadé avec succès"
 
@@ -103,7 +104,7 @@ msgid "Application Title"
 msgstr "Nom Application"
 
 #: src/Form/AppEditForm.php:61 src/Form/MediaEditForm.php:154
-#: src/Form/MediaEditFullForm.php:75 template/front/list-index.phtml:27
+#: src/Form/MediaEditFullForm.php:75 template/front/list-index.phtml:31
 msgid "Submit"
 msgstr "Soumettre"
 
@@ -172,16 +173,15 @@ msgstr ""
 
 #: src/Form/Element/Media.php:122
 msgid ""
-"Unfortunately we do not have the infrastructure of the giants of the "
-"internet, and therefore we have server limitations for uploading large "
-"files. Conversely, we need files of good size so that they display correctly "
-"on all types of screens/devices."
+"Given the quality of the telecom networks and to allow an optimal experience "
+"for all in all circumstances during the upload (mobile + desktop), we have "
+"been forced to set up a high maximum limit of the weight of the uploaded "
+"files."
 msgstr ""
-"Malheureusement, nous n'avons pas (encore !) les infrastructures des géants "
-"de l'Internet (qui ont des serveurs dédiés pour l'upload des medias), et "
-"avons donc des limitations serveur pour l'upload d'énormes fichiers. A "
-"l'inverse, nous avons besoin de fichiers de bonne taille afin qu'ils "
-"s'affichent correctement sur tous les types d'écrans/matériels !"
+"Compte tenu de la qualité des réseaux télécoms et afin de permettre une "
+"expérience optimale à tous en toutes circonstances lors de l'upload (mobile "
+"+ desktop), nous avons été obligés de mettre en place une limite maximale "
+"haute du poids des fichiers chargés."
 
 #: src/Form/Element/Media.php:124
 msgid "Max media alert : you have reach maximum of picture for this field"
@@ -193,7 +193,7 @@ msgstr ""
 msgid "Your selection (you can unlink each media)"
 msgstr "Votre sélection (vous pouvez désassocier chaque média)"
 
-#: src/Form/Element/Media.php:127 template/front/list-index.phtml:93
+#: src/Form/Element/Media.php:127 template/front/list-index.phtml:97
 #: template/front/modal-formlist.phtml:19
 msgid "Edit"
 msgstr "Editer"
@@ -206,12 +206,12 @@ msgstr "Enregistrer"
 msgid "Cancel"
 msgstr "Annuler"
 
-#: src/Form/Element/Media.php:131 template/front/list-index.phtml:51
+#: src/Form/Element/Media.php:131 template/front/list-index.phtml:55
 msgid "Thumbnail"
 msgstr "Image"
 
 #: src/Form/Element/Media.php:132 src/Form/MediaEditForm.php:41
-#: template/front/list-index.phtml:53
+#: template/front/list-index.phtml:57
 msgid "Title"
 msgstr "Titre"
 
@@ -300,28 +300,28 @@ msgstr "Afficher les éléments sélectionnés en premier"
 msgid "Show Item UID media"
 msgstr "Afficher les médias d l'UID"
 
-#: src/Form/Element/Media.php:330
+#: src/Form/Element/Media.php:340
 msgid "Choose or add new media file"
 msgstr "Choisir ou ajouter un nouveau fichier média"
 
-#: src/Form/Element/Media.php:341
+#: src/Form/Element/Media.php:351
 msgid "We recommend you to fill 4 pictures for all seasons"
 msgstr ""
 "Nous vous recommandons d'ajouter 4 images pour couvrir toutes les saisons"
 
-#: src/Form/Element/Media.php:347
+#: src/Form/Element/Media.php:357
 msgid "No media for now..."
 msgstr "Il n'y a pas encore de média..."
 
-#: src/Form/Element/Media.php:354
+#: src/Form/Element/Media.php:364
 msgid "1 picture only"
 msgstr "1 image seulement"
 
-#: src/Form/Element/Media.php:357
+#: src/Form/Element/Media.php:367
 msgid "1 picture per season only = 4 pictures"
 msgstr "1 image par saison seulement = 4 images"
 
-#: src/Form/Element/Media.php:360
+#: src/Form/Element/Media.php:370
 #, php-format
 msgid "Max %s pictures"
 msgstr "Maximum de %s images"
@@ -374,7 +374,7 @@ msgstr "Type de licence"
 msgid "Copyright"
 msgstr "Copyright"
 
-#: src/Form/MediaEditFullForm.php:30 template/front/list-index.phtml:56
+#: src/Form/MediaEditFullForm.php:30 template/front/list-index.phtml:60
 msgid "Filename"
 msgstr "Nom Fichier"
 
@@ -420,8 +420,8 @@ msgstr ""
 "Vous pouvez ajouter ici un nouveau média et l'utiliser dans tous les autres "
 "modules"
 
-#: template/front/list-attach.phtml:44 template/front/list-index.phtml:40
-#: template/front/list-index.phtml:101
+#: template/front/list-attach.phtml:44 template/front/list-index.phtml:44
+#: template/front/list-index.phtml:105
 msgid "Delete"
 msgstr "Supprimer"
 
@@ -429,71 +429,71 @@ msgstr "Supprimer"
 msgid "In process"
 msgstr "En cours"
 
-#: template/front/list-edit.phtml:14
+#: template/front/list-edit.phtml:15
 msgid "Edit Media"
 msgstr "Editer le média"
 
-#: template/front/list-index.phtml:17
+#: template/front/list-index.phtml:20
 msgid "All your medias"
 msgstr "Tous vos médias"
 
-#: template/front/list-index.phtml:24
+#: template/front/list-index.phtml:27
 msgid "Type user id or identity"
 msgstr "Saisir le n° ID utilisateur ou l'identité"
 
-#: template/front/list-index.phtml:25
+#: template/front/list-index.phtml:29
 msgid "Keyword"
 msgstr "Mots Clefs"
 
-#: template/front/list-index.phtml:50
+#: template/front/list-index.phtml:54
 msgid "ID"
 msgstr "ID"
 
-#: template/front/list-index.phtml:52
+#: template/front/list-index.phtml:56
 msgid "Status"
 msgstr "Statut"
 
-#: template/front/list-index.phtml:57
+#: template/front/list-index.phtml:61
 msgid "Mimetype"
 msgstr "Extension Mimetype"
 
-#: template/front/list-index.phtml:58
+#: template/front/list-index.phtml:62
 msgid "User Id"
 msgstr "User ID"
 
-#: template/front/list-index.phtml:60
+#: template/front/list-index.phtml:64
 msgid "Using count"
 msgstr "Compteur Utilisateur"
 
-#: template/front/list-index.phtml:61
+#: template/front/list-index.phtml:65
 msgid "Time"
 msgstr "Date"
 
-#: template/front/list-index.phtml:81
+#: template/front/list-index.phtml:85
 msgid "Enabled"
 msgstr "Activé"
 
-#: template/front/list-index.phtml:83
+#: template/front/list-index.phtml:87
 msgid "Deleted"
 msgstr "Supprimé"
 
-#: template/front/list-index.phtml:97
+#: template/front/list-index.phtml:101
 msgid "Undelete"
 msgstr "Rétablir"
 
-#: template/front/list-index.phtml:105
+#: template/front/list-index.phtml:109
 msgid "Download"
 msgstr "Télécharger"
 
-#: template/front/list-index.phtml:122
+#: template/front/list-index.phtml:126
 msgid "No resource available yet."
 msgstr "Aucune ressource disponible pour l'instant."
 
-#: template/front/list-index.phtml:204 template/front/list-index.phtml:255
+#: template/front/list-index.phtml:208 template/front/list-index.phtml:259
 msgid "Do you confirm delete action ?"
 msgstr "Confirmez vous la suppression de ce média?"
 
-#: template/front/list-index.phtml:254
+#: template/front/list-index.phtml:258
 msgid "This media is already in used !"
 msgstr "Ce média est encore utilisé !"
 
@@ -512,6 +512,21 @@ msgstr "Vous devez compléter les informations fichiers avant de soumettre"
 #: template/front/partial/crop.phtml:33
 msgid "Notice : min width has been reached"
 msgstr "Attention : la largeur minimale exigée a été atteinte"
+
+#~ msgid "List of your media"
+#~ msgstr "Tous vos médias"
+
+#~ msgid ""
+#~ "Unfortunately we do not have the infrastructure of the giants of the "
+#~ "internet, and therefore we have server limitations for uploading large "
+#~ "files. Conversely, we need files of good size so that they display "
+#~ "correctly on all types of screens/devices."
+#~ msgstr ""
+#~ "Malheureusement, nous n'avons pas (encore !) les infrastructures des "
+#~ "géants de l'Internet (qui ont des serveurs dédiés pour l'upload des "
+#~ "medias), et avons donc des limitations serveur pour l'upload d'énormes "
+#~ "fichiers. A l'inverse, nous avons besoin de fichiers de bonne taille afin "
+#~ "qu'ils s'affichent correctement sur tous les types d'écrans/matériels !"
 
 #~ msgid "Missing user id"
 #~ msgstr "User ID manquant"

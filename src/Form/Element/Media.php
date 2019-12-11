@@ -119,7 +119,7 @@ class Media extends \Zend\Form\Element\Text
         $maxAlertTitle = __("Max media alert");
         $errorAlertTitle = __("Error during upload");
         $errorAlertBefore = __("Oops ! You reached the limits set for files : please modify your file(s) !");
-        $errorAlertAfter = __("Unfortunately we do not have the infrastructure of the giants of the internet, and therefore we have server limitations for uploading large files. Conversely, we need files of good size so that they display correctly on all types of screens/devices.");
+        $errorAlertAfter = __("Given the quality of the telecom networks and to allow an optimal experience for all in all circumstances during the upload (mobile + desktop), we have been forced to set up a high maximum limit of the weight of the uploaded files.");
 
         $maxAlertMsg = __("Max media alert : you have reach maximum of picture for this field");
 
