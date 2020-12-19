@@ -14,14 +14,14 @@ use Module\Media\Form\MediaEditForm;
 use Module\Media\Form\MediaEditFullForm;
 use Pi;
 use Pi\Mvc\Controller\ActionController;
-use Zend\Db\Sql\Expression;
-use Zend\Db\Sql\Predicate\In;
-use Zend\Stdlib\RequestInterface as Request;
-use Zend\Stdlib\ResponseInterface as Response;
+use Laminas\Db\Sql\Expression;
+use Laminas\Db\Sql\Predicate\In;
+use Laminas\Stdlib\RequestInterface as Request;
+use Laminas\Stdlib\ResponseInterface as Response;
 
 /**
  * Modal controller
- * 
+ *
  * @author Frédéric TISSOT <contact@espritdev.fr>
  */
 class ModalController extends ActionController
@@ -65,22 +65,30 @@ class ModalController extends ActionController
         $where = array();
 
         if(Pi::engine()->section() == 'admin'){
+            // Get admin roles
+            $adminRoles = Pi::registry('role')->read('admin');
+
+            // Set model
             $roleModel = Pi::model('user_role');
+
+            // select users
             $select = $roleModel->select();
-            $select->where(array('role' => 'admin'));
+            $select->where(array('role' => array_keys($adminRoles)));
             $roleRowset = $roleModel->selectWith($select);
 
+            // Set user list
             $adminRoles = array();
             foreach($roleRowset as $role){
                 $adminRoles[] = $role->uid;
             }
 
+            // Set selected user
             if($showUIDMedia){
                 $adminRoles[] = $showUIDMedia;
             }
 
+            // Set ware
             $where['uid'] = $adminRoles;
-
         } else {
             $where['uid'] = Pi::user()->getId();
         }
@@ -101,10 +109,10 @@ class ModalController extends ActionController
             $keywordBoolean = '+' . trim(implode(' +', $keywordArray));
 
             $select->where(
-                new \Zend\Db\Sql\Predicate\Expression("MATCH(".$mediaModel->getTable() . ".title, ".$mediaModel->getTable() . ".description) AGAINST (? IN BOOLEAN MODE) OR ".$mediaModel->getTable() . ".title LIKE ? OR ".$mediaModel->getTable() . ".description LIKE ?", $keywordBoolean, '%' . $keyword . '%', '%' . $keyword . '%')
+                new \Laminas\Db\Sql\Predicate\Expression("MATCH(".$mediaModel->getTable() . ".title, ".$mediaModel->getTable() . ".description) AGAINST (? IN BOOLEAN MODE) OR ".$mediaModel->getTable() . ".title LIKE ? OR ".$mediaModel->getTable() . ".description LIKE ?", $keywordBoolean, '%' . $keyword . '%', '%' . $keyword . '%')
             );
             $select->columns(array_merge($select->getRawState($select::COLUMNS), array(
-                new \Zend\Db\Sql\Expression("((MATCH(".$mediaModel->getTable() . ".title) AGAINST (?) * 2) + (MATCH(".$mediaModel->getTable() . ".description) AGAINST (?) * 1)) AS score", array($keyword, $keyword)),
+                new \Laminas\Db\Sql\Expression("((MATCH(".$mediaModel->getTable() . ".title) AGAINST (?) * 2) + (MATCH(".$mediaModel->getTable() . ".description) AGAINST (?) * 1)) AS score", array($keyword, $keyword)),
             )));
             $select->order('score DESC, time_created DESC');
         } else {
@@ -117,11 +125,11 @@ class ModalController extends ActionController
         $select = $mediaModel->select();
         $select->where($where);
         $select->offset($start);
-        $select->join(array('link' => $linkModel->getTable()), $mediaModel->getTable() . ".id = link.media_id", array(), \Zend\Db\Sql\Select::JOIN_LEFT);
+        $select->join(array('link' => $linkModel->getTable()), $mediaModel->getTable() . ".id = link.media_id", array(), \Laminas\Db\Sql\Select::JOIN_LEFT);
         $select->group($mediaModel->getTable() . ".id");
 
         $select->columns(array_merge($select->getRawState($select::COLUMNS), array(
-            new \Zend\Db\Sql\Expression('COUNT(DISTINCT link.id) as nb_links'),
+            new \Laminas\Db\Sql\Expression('COUNT(DISTINCT link.id) as nb_links'),
         )));
 
         if($keyword && trim($keyword)){
@@ -131,10 +139,10 @@ class ModalController extends ActionController
             $keywordBoolean = '+' . trim(implode(' +', $keywordArray));
 
             $select->where(
-                new \Zend\Db\Sql\Predicate\Expression("MATCH(".$mediaModel->getTable() . ".title, ".$mediaModel->getTable() . ".description) AGAINST (? IN BOOLEAN MODE) OR ".$mediaModel->getTable() . ".title LIKE ? OR ".$mediaModel->getTable() . ".description LIKE ?", $keywordBoolean, '%' . $keyword . '%', '%' . $keyword . '%')
+                new \Laminas\Db\Sql\Predicate\Expression("MATCH(".$mediaModel->getTable() . ".title, ".$mediaModel->getTable() . ".description) AGAINST (? IN BOOLEAN MODE) OR ".$mediaModel->getTable() . ".title LIKE ? OR ".$mediaModel->getTable() . ".description LIKE ?", $keywordBoolean, '%' . $keyword . '%', '%' . $keyword . '%')
             );
             $select->columns(array_merge($select->getRawState($select::COLUMNS), array(
-                new \Zend\Db\Sql\Expression("((MATCH(".$mediaModel->getTable() . ".title) AGAINST (?) * 2) + (MATCH(".$mediaModel->getTable() . ".description) AGAINST (?) * 1)) AS score", array($keyword, $keyword)),
+                new \Laminas\Db\Sql\Expression("((MATCH(".$mediaModel->getTable() . ".title) AGAINST (?) * 2) + (MATCH(".$mediaModel->getTable() . ".description) AGAINST (?) * 1)) AS score", array($keyword, $keyword)),
             )));
             $select->order('score DESC, time_created DESC');
         } else {
@@ -363,7 +371,7 @@ PHP;
             $form->setInputFilter(new MediaEditFilter());
             $form->get('submit')->setAttribute('class', 'd-none');
 
-            $view = new \Zend\View\Model\ViewModel;
+            $view = new \Laminas\View\Model\ViewModel;
 
             if ($this->request->isPost()) {
                 $post = $this->request->getPost();
@@ -371,7 +379,6 @@ PHP;
 
                 $form->setData($post);
                 if ($form->isValid()) {
-
                     $formIsValid = true;
                     // upload image
                     $file = $this->request->getFiles();
@@ -386,6 +393,7 @@ PHP;
                         $title = str_replace(array('-','_','.'), ' ', $title);
 
                         // Set params
+                        $params = [];
                         $params['filename'] = $file['file']['name'];
                         $params['title'] = $title;
                         $params['type'] = 'image';
@@ -455,7 +463,6 @@ PHP;
                         if ($uid = Pi::user()->getId()) {
                             $media->updated_by = $uid;
                         }
-
                         $media->save();
 
                         return array(

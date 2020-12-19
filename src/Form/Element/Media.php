@@ -14,7 +14,7 @@ namespace Module\Media\Form\Element;
 
 use Pi;
 
-class Media extends \Zend\Form\Element\Text
+class Media extends \Laminas\Form\Element\Text
 {
     /**
      * @return array
@@ -399,7 +399,7 @@ HTML;
         if(!isset($GLOBALS['isMediaModalLoaded'])){
             $GLOBALS['isMediaModalLoaded'] = true;
 
-            $cropView = new \Zend\View\Model\ViewModel;
+            $cropView = new \Laminas\View\Model\ViewModel;
             $cropView->setTemplate('media:front/partial/crop');
             $cropView->setVariable('module', 'media');
             $cropView->setVariable('controller', 'list');

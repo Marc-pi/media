@@ -74,7 +74,7 @@ class MediaEditForm extends BaseForm
         if ($this->thumbUrl) {
             $this->add(array(
                 'name' => 'imageview',
-                'type' => 'Module\Media\Form\Element\ImageCrop', // Zend\Form\Element\Image
+                'type' => 'Module\Media\Form\Element\ImageCrop', // Laminas\Form\Element\Image
                 'options' => array(
                     'label' => __('Uploaded image'),
                 ),

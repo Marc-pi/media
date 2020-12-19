@@ -9,22 +9,22 @@
 
 /**
  * Permission config
- * 
+ *
  * @author Zongshu Lin <lin40553024@163.com>
  */
-return array(
-    'admin'           => array(
-        'application' => array(
-            'title'       => _t('Application management'),
-        ),
-        'list'        => array(
-            'title'       => _t('Resource management'),
-        ),
-        'stats'       => array(
-            'title'       => _t('Statistics access'),
-        ),
-        'test'        => array(
-            'test'        => _t('Test'),
-        ),
-    ),
-);
+return [
+    'admin' => [
+        'application' => [
+            'title' => _t('Application management'),
+        ],
+        'list'        => [
+            'title' => _t('Resource management'),
+        ],
+        'stats'       => [
+            'title' => _t('Statistics access'),
+        ],
+        'test'        => [
+            'test' => _t('Test'),
+        ],
+    ],
+];

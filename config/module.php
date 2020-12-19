@@ -9,41 +9,41 @@
 
 /**
  * Module config and meta
- * 
+ *
  * @author Zongshu Lin <lin40553024@163.com>
  */
-return array(
+return [
     // Module meta
-    'meta'         => array(
-        'title'         => _a('Media'),
-        'description'   => _a('Module for media resources and APIs.'),
-        'version'       => '1.0.19',
-        'license'       => 'New BSD',
-        'logo'          => 'image/logo.png',
-        'readme'        => 'README.md',
-        'clonable'      => false,
-        'icon'          => 'fa-image'
-    ),
+    'meta'       => [
+        'title'       => _a('Media'),
+        'description' => _a('Module for media resources and APIs.'),
+        'version'     => '1.2.0',
+        'license'     => 'New BSD',
+        'logo'        => 'image/logo.png',
+        'readme'      => 'README.md',
+        'clonable'    => false,
+        'icon'        => 'fa-image',
+    ],
     // Author information
-    'author'        => array(
-        'Dev'           => 'Zongshu Lin; Frederic Tissot',
-		'Design'        => '@marc-pi, @esprit-dev',
-        'QA'            => '@marc-pi',
-        'Email'         => 'zongshu@eefocus.com',
-        'Website'       => 'http://www.github.com/linzongshu',
-        'Credits'       => 'Pi Engine Team.'
-    ),
+    'author'     => [
+        'Dev'     => 'Zongshu Lin; Frederic Tissot',
+        'Design'  => '@marc-pi, @esprit-dev',
+        'QA'      => '@marc-pi',
+        'Email'   => 'zongshu@eefocus.com',
+        'Website' => 'http://www.github.com/linzongshu',
+        'Credits' => 'Pi Engine Team.',
+    ],
     // Module dependency: list of module directory names, optional
-    'dependency'    => array(
-    ),
+    'dependency' => [
+    ],
     // Maintenance resources
-    'resource'      => array(
-        'database'      => array(
-            'sqlfile'      => 'sql/mysql.sql',
-        ),
+    'resource'   => [
+        'database'   => [
+            'sqlfile' => 'sql/mysql.sql',
+        ],
         // Database meta
-        'navigation'    => 'navigation.php',
-        'config'        => 'config.php',
-        'permission'    => 'permission.php',
-    ),
-);
+        'navigation' => 'navigation.php',
+        'config'     => 'config.php',
+        'permission' => 'permission.php',
+    ],
+];

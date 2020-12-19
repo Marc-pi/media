@@ -14,7 +14,7 @@ use Pi\Application\Model\Model;
 
 /**
  * Model class for Doc
- * 
+ *
  * @author Zongshu Lin <lin40553024@163.com>
  */
 class Doc extends Model
@@ -46,10 +46,10 @@ class Doc extends Model
         'updated_by',
         'license_type',
         'copyright',
-        'geoloc_latitude',
-        'geoloc_longitude',
         'cropping',
         'featured',
+        'latitude',
+        'longitude',
     );
 
     /**

@@ -125,7 +125,8 @@ class RowGateway extends \Pi\Db\RowGateway\RowGateway
                 /**
                  * Try flushing extra object as event is an extended story object
                  */
-                if($module == 'news'){
+                // ToDo : $module should be `news` or `event` ?
+                if($module == 'news' && Pi::service('module')->isActive('event')){
                     $entity = Pi::model('extra', 'event')->find($object_id);
                     if($entity && isset($entity->id)){
                         $entity->save();

@@ -39,8 +39,8 @@ class ToolsController extends ActionController
         $select = $mediaModel->select();
 
         $select->where(array(
-            new \Zend\Db\Sql\Predicate\Like('description', ''),
-            new \Zend\Db\Sql\Predicate\NotLike('filename', ''),
+            new \Laminas\Db\Sql\Predicate\Like('description', ''),
+            new \Laminas\Db\Sql\Predicate\NotLike('filename', ''),
         ));
 
         $mediaCollection = Pi::model('doc', 'media')->selectWith($select);

@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Pi-media\n"
-"POT-Creation-Date: 2017-07-19 13:59+0430\n"
-"PO-Revision-Date: 2017-07-19 13:59+0430\n"
+"POT-Creation-Date: 2019-11-25 13:14+0330\n"
+"PO-Revision-Date: 2019-11-25 13:14+0330\n"
 "Last-Translator: Taiwen Jiang <taiwenjiang@tsinghua.org.cn>\n"
 "Language-Team: \n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.12\n"
+"X-Generator: Poedit 2.2.4\n"
 "X-Poedit-KeywordsList: _a;_t\n"
 "X-Poedit-Basepath: ../..\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -74,107 +74,130 @@ msgstr ""
 msgid "Max file size"
 msgstr ""
 
-#: config/config.php:94
-msgid "Maximum size for files allowed to upload (in KB)."
+#: config/config.php:95
+msgid ""
+"Maximum size for files allowed to upload (in KB). Caution : on front side, "
+"max file size messages are displayed in octets (ko). Here you set in bytes "
+"(Kb) ! For 4Mo, you have to set 4 * 1024 = 4096 kb. Also, front limit is "
+"rounded to lower Mb integer after conversion, so 4096 Kb == 4Mo and 4095 kb "
+"== 3Mo"
 msgstr ""
 
-#: config/config.php:101
+#: config/config.php:103
 msgid "Max Image width (upload)"
 msgstr ""
 
-#: config/config.php:109
+#: config/config.php:111
 msgid "Max Image height (upload)"
 msgstr ""
 
-#: config/config.php:117
+#: config/config.php:119
 msgid "Min Image width (upload)"
 msgstr ""
 
-#: config/config.php:125
+#: config/config.php:127
 msgid "Min Image height (upload)"
 msgstr ""
 
-#: config/config.php:133
+#: config/config.php:135
 msgid "Image quality"
 msgstr ""
 
-#: config/config.php:134
-msgid "Between 0 to 100 and support both of JPG and PNG, default is 75"
+#: config/config.php:136
+msgid ""
+"Between 0 to 100 and support both of JPG and PNG, default is 75. Can be "
+"overridden by custom module config"
 msgstr ""
 
-#: config/config.php:141
+#: config/config.php:143
+msgid "Image ratio width"
+msgstr ""
+
+#: config/config.php:144
+msgid "Example : \"3\" for 3/2 ratio"
+msgstr ""
+
+#: config/config.php:151
+msgid "Image ratio height"
+msgstr ""
+
+#: config/config.php:152
+msgid "Example : \"2\" for 3/2 ratio"
+msgstr ""
+
+#: config/config.php:159
 msgid "Add Watermark"
 msgstr ""
 
-#: config/config.php:149
+#: config/config.php:167
 msgid "Watermark Image"
 msgstr ""
 
-#: config/config.php:156
+#: config/config.php:174
 msgid "Watermark Position"
 msgstr ""
 
-#: config/config.php:165
+#: config/config.php:183
 msgid "Top Left"
 msgstr ""
 
-#: config/config.php:166
+#: config/config.php:184
 msgid "Top Right"
 msgstr ""
 
-#: config/config.php:167
+#: config/config.php:185
 msgid "Bottom Left"
 msgstr ""
 
-#: config/config.php:168
+#: config/config.php:186
 msgid "Bottom Right"
 msgstr ""
 
-#: config/config.php:175
+#: config/config.php:193
 msgid "Default copyright"
 msgstr ""
 
-#: config/config.php:181
+#: config/config.php:199
 msgid "Max gallery images for freemium related items"
 msgstr ""
 
-#: config/config.php:188
+#: config/config.php:206
 msgid "Alert message for freemium item"
 msgstr ""
 
-#: config/config.php:190
+#: config/config.php:208
 msgid "Freemium item limitations... You can't do this action"
 msgstr ""
 
-#: config/config.php:194
+#: config/config.php:212
 msgid "Large Image width"
 msgstr ""
 
-#: config/config.php:202
+#: config/config.php:220
 msgid "Large Image height"
 msgstr ""
 
-#: config/config.php:210
+#: config/config.php:228
 msgid "Item Image width"
 msgstr ""
 
-#: config/config.php:218
+#: config/config.php:236
 msgid "Item Image height"
 msgstr ""
 
-#: config/config.php:226
+#: config/config.php:244
 msgid "Medium Image width"
 msgstr ""
 
-#: config/config.php:234
+#: config/config.php:252
 msgid "Medium Image height"
 msgstr ""
 
-#: config/config.php:242
+#: config/config.php:260
 msgid "Thumb Image width"
 msgstr ""
 
-#: config/config.php:250
+#: config/config.php:268
 msgid "Thumb Image height"
 msgstr ""
 
@@ -239,29 +262,29 @@ msgstr ""
 msgid "Statistics access"
 msgstr ""
 
-#: src/Controller/Admin/ApplicationController.php:104
+#: src/Controller/Admin/ApplicationController.php:103
 msgid "Application List"
 msgstr ""
 
-#: src/Controller/Admin/ApplicationController.php:123
-#: src/Controller/Admin/ApplicationController.php:178
+#: src/Controller/Admin/ApplicationController.php:122
+#: src/Controller/Admin/ApplicationController.php:177
 msgid "There are some error occurred."
 msgstr ""
 
-#: src/Controller/Admin/ApplicationController.php:130
-#: src/Controller/Admin/ApplicationController.php:192
+#: src/Controller/Admin/ApplicationController.php:129
+#: src/Controller/Admin/ApplicationController.php:191
 msgid "Cannot save data."
 msgstr ""
 
-#: src/Controller/Admin/ApplicationController.php:138
+#: src/Controller/Admin/ApplicationController.php:137
 msgid "Invalid application key."
 msgstr ""
 
-#: src/Controller/Admin/ApplicationController.php:214
+#: src/Controller/Admin/ApplicationController.php:213
 msgid "Invalid application."
 msgstr ""
 
-#: src/Controller/Admin/ApplicationController.php:221
+#: src/Controller/Admin/ApplicationController.php:220
 msgid "Application already in use."
 msgstr ""
 
@@ -280,12 +303,12 @@ msgid "Add test"
 msgstr ""
 
 #: src/Controller/Admin/TestController.php:83
-#: src/Controller/Front/ModalController.php:257
+#: src/Controller/Front/ModalController.php:323
 msgid "Resource List"
 msgstr ""
 
-#: src/Controller/Front/ModalController.php:478
-#: src/Controller/Front/ModalController.php:515
+#: src/Controller/Front/ModalController.php:592
+#: src/Controller/Front/ModalController.php:629
 msgid "Invalid media ID"
 msgstr ""
 
@@ -372,16 +395,24 @@ msgid ""
 msgstr ""
 
 #: template/admin/tools-index.phtml:38 template/admin/tools-index.phtml:47
-msgid "Remove orphaned media"
+msgid "Clean cache for orpheaned media"
 msgstr ""
 
 #: template/admin/tools-index.phtml:42
 msgid ""
-"This tool can clean your server and remove medias than not used on any "
-"content"
+"This tool can clean your server by removing cache medias that are not used "
+"on any linked content"
 msgstr ""
 
-#: template/front/list-edit.phtml:19
+#: template/admin/tools-index.phtml:56 template/admin/tools-index.phtml:65
+msgid "Hard delete soft-deleted media"
+msgstr ""
+
+#: template/admin/tools-index.phtml:60
+msgid "This tool can clean your server by removing soft deleted media"
+msgstr ""
+
+#: template/front/list-edit.phtml:20
 msgid "No media select, please try again!"
 msgstr ""
 

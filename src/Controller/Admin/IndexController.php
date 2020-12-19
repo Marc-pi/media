@@ -13,21 +13,22 @@ use Pi\Mvc\Controller\ActionController;
 
 /**
  * Index controller
- * 
+ *
  * @author Zongshu Lin <lin40553024@163.com>
  */
 class IndexController extends ActionController
 {
     /**
      * Jump to all media list page
-     * 
-     * @return ViewModel 
+     *
+     * @return ViewModel
      */
     public function indexAction()
     {
         return $this->redirect()->toRoute('', array(
             'controller' => 'list',
             'action'     => 'index',
+            'all' => 1,
         ));
     }
 }

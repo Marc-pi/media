@@ -13,7 +13,7 @@ use Pi;
 use Pi\Mvc\Controller\ActionController;
 use Module\Media\Form\AppEditForm;
 use Module\Media\Form\AppEditFilter;
-use Zend\Db\Sql\Expression;
+use Laminas\Db\Sql\Expression;
 use Pi\Paginator\Paginator;
 
 /**
@@ -49,7 +49,7 @@ class ApplicationController extends ActionController
     /**
      * Render form
      * 
-     * @param Zend\Form\Form $form     Form instance
+     * @param Laminas\Form\Form $form     Form instance
      * @param string         $message  Message assign to template
      * @param bool           $error    Whether is error message
      */

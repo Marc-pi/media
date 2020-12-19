@@ -15,9 +15,9 @@ use Pi\Paginator\Paginator;
 use Pi;
 use Module\Media\Form\MediaEditFullForm;
 use Module\Media\Form\MediaEditFilter;
-use Zend\View\Model\ViewModel;
-use Zend\Stdlib\RequestInterface as Request;
-use Zend\Stdlib\ResponseInterface as Response;
+use Laminas\View\Model\ViewModel;
+use Laminas\Stdlib\RequestInterface as Request;
+use Laminas\Stdlib\ResponseInterface as Response;
 
 /**
  * List controller
@@ -630,7 +630,7 @@ class ListController extends ActionController
     /**e
      * Render form
      *
-     * @param Zend\Form\Form $form     Form instance
+     * @param Laminas\Form\Form $form     Form instance
      * @param string         $message  Message assign to template
      * @param bool           $error    Whether is error message
      */
